@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/lijinlong/local/docker/gateway-core'
+let g:netrw_dirhist_7='/Users/lijinlong/local/file'
+let g:netrw_dirhist_6='/Users/lijinlong/local/k8s/helm/harbor-helm/templates/database'
+let g:netrw_dirhist_5='/Users/lijinlong/local/download/harbor/common/config/log'
+let g:netrw_dirhist_4='/Users/lijinlong/company/channel-mgt'
+let g:netrw_dirhist_3='/opt/gradle/gradle-7.5.1/init.d'
+let g:netrw_dirhist_2='/opt/homebrew/Cellar/gradle/7.5.1'
+let g:netrw_dirhist_1='/Users/lijinlong/.ssh'
