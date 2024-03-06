@@ -1,5 +1,6 @@
 " 关闭兼容模式
 set nocompatible
+set backspace=indent,eol,start
 
 call plug#begin()
 let g:plug_url_format = 'git@github.com:%s.git'
@@ -7,6 +8,10 @@ let g:plug_url_format = 'git@github.com:%s.git'
 Plug 'Shougo/unite.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+"Plug 'ycm-core/YouCompleteMe'
 
 " 查看当前代码文件中的变量和函数列表的插件，
 " 可以切换和跳转到代码中对应的变量和函数的位置
@@ -65,7 +70,7 @@ set ignorecase
 set updatetime=300
 let mapleader=","
 
-set runtimepath+=/Users/lijinlong/.vim/plugged/nerdtree
+set runtimepath+=~/.vim/plugged/nerdtree
 "快捷键映射
 map tr :NERDTreeToggle<CR>
 map fc :close<CR>

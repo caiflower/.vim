@@ -1,0 +1,45 @@
+" 关闭兼容模式
+set nocompatible
+set backspace=indent,eol,start
+
+" 记录上次打开文件的浏览位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+set hlsearch " 高亮显示搜索
+set smartcase " 搜索时候忽略大小写
+set wildmenu
+set number
+syntax on
+set showmode
+set mouse=r
+set autoindent
+set cursorline
+set cursorcolumn
+set ignorecase
+set updatetime=300
+let mapleader=","
+
+"快捷键映射
+map tr :NERDTreeToggle<CR>
+map fc :close<CR>
+map fq :quit<CR>
+map fs :split<CR>
+map fvs :vsplit<CR>
+map fw :w<CR>
+map ; :
+
+"前/后标签切换快捷键
+nmap <F4> :TagbarToggle f<CR>
+nmap <F9> <ESC>:bp<RETURN>
+nmap <F10> <ESC>:bn<RETURN>
+nmap <F11> <ESC>:tabprevious<RETURN>
+nmap <F12> <ESC>:tabnext<RETURN>
+
+"自动补齐成对符号
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
