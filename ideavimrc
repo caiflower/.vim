@@ -1,0 +1,52 @@
+Plug 'preservim/nerdtree'
+
+" 记录上次打开文件的浏览位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+let mapleader=","
+
+set hlsearch " 高亮显示搜索
+set smartcase " 搜索时忽略大小写
+set cursorline
+set cursorcolumn
+set autoindent
+set ignorecase
+set updatetime=300
+
+map tr :NERDTreeToggle<CR>
+map fc :close<CR>
+map fq :quit<CR>
+map fs :split<CR>
+map fvs :vsplit<CR>
+map fw :w<CR>
+
+# 代码跳转设置 command+s, 如果修改成Ctrl将D改成C
+nnoremap <D-s> :<C-u>action GotoSuperMethod<CR>
+nnoremap <D-]> :<C-u>action GotoDeclaration<CR>
+nnoremap <D-i> :<C-u>action GotoImplementation<CR>
+nnoremap <D-u> :<C-u>action ShowUsages<CR>
+"查找用法
+nnoremap <D-t> :<C-u>action FindUsages<CR>
+"跳转到实体类
+nnoremap <Leader>gc :action GotoClass<CR>
+# debug启动
+nnoremap <Leader>db :<C-u>action ChooseDebugConfiguration<CR>
+"正常启动工程
+nnoremap <Leader>run :action ChooseRunConfiguration<CR>
+"修改当前文件的文件名
+nnoremap <Leader>rn :<C-u>action RenameFile<CR>
+"打开命令管理器
+nnoremap <Leader>cmd Vy<CR>:action ActivateTerminalToolWindow<CR>
+"关闭所有窗口
+nnoremap <Leader>c :action CloseActiveTab<CR>
+"添加注释
+map <Leader>cc :action CommentByLineComment<CR>
+
+# 代码提交, bookmark
+nnoremap an :action Annotate<cr>
+nnoremap tm :action ToggleBookmark<cr>
+nnoremap tb :action ToggleLineBreakpoint<cr>
+"查看所有断点
+nnoremap vb :action ViewBreakpoints<CR>
