@@ -21,14 +21,16 @@ map fq :quit<CR>
 map fs :split<CR>
 map fvs :vsplit<CR>
 map fw :w<CR>
+# 取消搜索高亮
+nnoremap <Leader>u :nohlsearch<CR>
 
 # 代码跳转设置 command+s, 如果修改成Ctrl将D改成C
-nnoremap <D-s> :<C-u>action GotoSuperMethod<CR>
-nnoremap <D-]> :<C-u>action GotoDeclaration<CR>
-nnoremap <D-i> :<C-u>action GotoImplementation<CR>
-nnoremap <D-u> :<C-u>action ShowUsages<CR>
+nnoremap <C-s> :<C-u>action GotoSuperMethod<CR>
+nnoremap <C-]> :<C-u>action GotoDeclaration<CR>
+nnoremap <C-[> :<C-u>action GotoImplementation<CR>
+nnoremap <C-u> :<C-u>action ShowUsages<CR>
 "查找用法
-nnoremap <D-t> :<C-u>action FindUsages<CR>
+nnoremap <C-t> :<C-u>action FindUsages<CR>
 "跳转到实体类
 nnoremap <Leader>gc :action GotoClass<CR>
 # debug启动
