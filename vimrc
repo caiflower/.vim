@@ -16,7 +16,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " 查看当前代码文件中的变量和函数列表的插件，
 " 可以切换和跳转到代码中对应的变量和函数的位置
 " 大纲式导航, Go 需要 https://github.com/jstemmer/gotags 支持
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " thmes
 "Plug 'olimorris/onedarkpro.nvim'
@@ -101,6 +101,8 @@ nmap <F9> <ESC>:bp<RETURN>
 nmap <F10> <ESC>:bn<RETURN>
 nmap <F11> <ESC>:tabprevious<RETURN>
 nmap <F12> <ESC>:tabnext<RETURN>
+"格式化快捷键
+nmap <leader>f :call CocAction('format')<CR>
 
 "自动补齐成对符号
 inoremap ( ()<ESC>i
@@ -110,7 +112,15 @@ inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 
 " 默认主题
-colorscheme papercolor
+colorscheme jellybeans
+
+" Golang Theme Settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_disable_autoinstall = 0
 
 call coc#add_extension('coc-highlight','coc-json', 'coc-snippets')
 
@@ -120,9 +130,9 @@ filetype plugin indent on "文件类型识别
  "跳转到定义位置
  nmap <C-]> <Plug>(coc-definition)
  "跳转到引用位置
- nmap <C-i> <Plug>(coc-references)
+ nmap <C-r> <Plug>(coc-references)
  "跳转到引用位置
- nmap <C-s> <Plug>(coc-implementation)
+ nmap <C-i> <Plug>(coc-implementation)
  " 跳转到错误位置
  nmap <leader>e <Plug>(coc-diagnostic-next)
 
@@ -140,7 +150,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-let g:Tlist_Ctags_Cmd='/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags'
+"let g:Tlist_Ctags_Cmd='/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags'
 
 let g:unite_source_menu_menus = get(g:,'unite_source_menu_menus',{})
 let g:unite_source_menu_menus.git = {
