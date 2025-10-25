@@ -103,6 +103,8 @@ nmap <F11> <ESC>:tabprevious<RETURN>
 nmap <F12> <ESC>:tabnext<RETURN>
 "格式化快捷键
 nmap <leader>f :call CocAction('format')<CR>
+"取消搜索高亮
+nnoremap <Leader>u :nohlsearch<CR>
 
 "自动补齐成对符号
 inoremap ( ()<ESC>i
