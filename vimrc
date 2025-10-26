@@ -48,6 +48,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'honza/vim-snippets'
+
 call plug#end()
 
 
@@ -105,6 +106,9 @@ nmap <F12> <ESC>:tabnext<RETURN>
 nmap <leader>f :call CocAction('format')<CR>
 "取消搜索高亮
 nnoremap <Leader>u :nohlsearch<CR>
+" 快速debug当前打开的文件
+nmap <leader>got :!go test -v %<CR>
+nmap <leader>gor :!go run -v %<CR>
 
 "自动补齐成对符号
 inoremap ( ()<ESC>i
